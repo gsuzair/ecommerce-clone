@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16
+    container_name: headless_store_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: headless_store
+    ports:
+      - "5433:5432"   # host port 5433 avoids conflicts
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
