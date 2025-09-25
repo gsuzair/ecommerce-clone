@@ -4,6 +4,8 @@ import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
+import productsRouter from './routes/products.js';
+
 
 const app = express();
 const PORT = process.env.PORT ?? 4000;
@@ -17,19 +19,18 @@ app.use(cookieParser());
 app.use(cors({ origin: CLIENT_ORIGIN, credentials: true }));
 
 app.get('/', (_req, res) => {
-  res.json({ ok: true, msg: 'API is running', endpoints: ['/health', '/api/products'] });
+    res.json({ ok: true, msg: 'API is running', endpoints: ['/health', '/api/products'] });
 });
 
 // health check
 app.get('/health', (_req, res) => res.json({ ok: true }));
+// app.get('/api/products', (_req, res) => res.json({ ok: false }));
 
-// example api route
-app.get('/api/products', (_req, res) => {
-  res.json({ data: [], pagination: { page: 1, total: 0 } });
-});
+app.use('/api/products', productsRouter);
 
 // 404 handler
 app.use((req, res) => res.status(404).json({ error: 'Not found' }));
+
 
 // error handler
 app.use((err, _req, res, _next) => {
@@ -37,6 +38,7 @@ app.use((err, _req, res, _next) => {
   res.status(500).json({ error: 'Server error' });
 });
 
+
 app.listen(PORT, () => {
-  console.log(`API running on http://localhost:${PORT}`);
+    console.log(`API running on http://localhost:${PORT}`);
 });
