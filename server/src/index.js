@@ -5,6 +5,8 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import productsRouter from './routes/products.js';
+import usersRouter from './routes/users.js';
+import categoriesRouter from './routes/categories.js';
 
 
 const app = express();
@@ -27,6 +29,8 @@ app.get('/health', (_req, res) => res.json({ ok: true }));
 // app.get('/api/products', (_req, res) => res.json({ ok: false }));
 
 app.use('/api/products', productsRouter);
+app.use('/api/users', usersRouter);
+app.use('/api/categories', categoriesRouter);
 
 // 404 handler
 app.use((req, res) => res.status(404).json({ error: 'Not found' }));
