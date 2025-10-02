@@ -6,7 +6,7 @@ const router = Router();
 router.get('/', async (req, res, next) => {
   try {
     const categories = await prisma.category.findMany({
-      orderBy: { createdAt: 'desc' },
+      orderBy: { id: 'desc' },
       take: 20,
     });
     res.json({ data: categories });
