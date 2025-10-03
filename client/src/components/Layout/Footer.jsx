@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 text-sm">
           <div className="col-span-2 sm:col-span-1">
-            <Link to="/" className="text-lg font-semibold">Store<span className="text-gray-500">.js</span></Link>
+            <Link to="/" className="text-lg font-semibold">Bamberg Store</Link>
             <p className="mt-3 text-gray-500">Quality goods, fast shipping.</p>
           </div>
 
@@ -48,7 +48,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 border-t pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
-          <p>© {new Date().getFullYear()} Store.js. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Bamberg Store. All rights reserved.</p>
           <div className="mt-2 sm:mt-0 flex items-center gap-4">
             <a href="#">Privacy</a>
             <a href="#">Terms</a>
