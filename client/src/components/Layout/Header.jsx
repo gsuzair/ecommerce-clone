@@ -25,7 +25,7 @@ export default function Header() {
             Cart
             <span className="ml-2 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-gray-900 text-white text-xs px-1">0</span>
           </Link>
-          <Link to="/signin" className="hidden sm:inline-flex rounded-lg border px-3 py-1.5 text-sm">Sign in</Link>
+          <Link to="/" className="hidden sm:inline-flex rounded-lg border px-3 py-1.5 text-sm">Sign Up</Link>
 
           {/* Mobile menu button */}
           <button
