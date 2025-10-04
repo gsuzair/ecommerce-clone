@@ -1,9 +1,7 @@
 import Header from "../../components/Layout/Header";
 import Footer from "../../components/Layout/Footer";
 import CardSkeleton from '../../components/Layout/Product/CardSkeleton';
-import { Link } from "react-router-dom";
-import { FiFilter, FiSearch } from "react-icons/fi";
-
+import ButtonCustom from '../../components/button/ButtonCustom';
 
 const Shop = () => {
 
@@ -55,7 +53,16 @@ const Shop = () => {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {Array.from({ length: 12 }).map((_, i) => <CardSkeleton key={i} />)}
             </div>
-        </div> */}
+            <ButtonCustom
+              type="submit"
+              className="mt-6 block mx-auto px-4 py-2 rounded-lg border"
+              onClick={() => console.log('clicked')}
+              disabled
+            >
+              Load More
+            </ButtonCustom>
+
+        </div>
       <Footer />
     </div>
   );
