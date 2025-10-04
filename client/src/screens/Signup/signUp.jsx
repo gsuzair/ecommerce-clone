@@ -1,6 +1,7 @@
 import { useState } from "react";
-import Button from "../../components/button/button";
+import Button from "../../components/button/ButtonCustom";
 import TextField from "../../components/textField/textField";
+import { useNavigate } from "react-router-dom";
 
 import "./signUp.css";
 
@@ -20,12 +21,15 @@ const Signup = () => {
     console.log("button pressed");
   };
 
+  //tahir's addition to the code
+  const navigate = useNavigate();
+
   return (
     <div className="signup_container">
       <div className="signup_form_container">
         <div className="left">
           <h1>Welcome Back</h1>
-          <Button type="submit" className="white_btn" onClick={handleSubmit}>
+          <Button type="submit" className="white_btn" onClick={() => navigate("/")}>
             Sign In
           </Button>
 
