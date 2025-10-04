@@ -1,6 +1,6 @@
 import Header from "../../components/Layout/Header";
 import Footer from "../../components/Layout/Footer";
-import CardSkeleton from '../../components/Layout/Product/CardSkeleton';
+import CardSkeleton from '../../components/Product/CardSkeleton';
 import ButtonCustom from '../../components/button/ButtonCustom';
 
 const Shop = () => {
