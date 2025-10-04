@@ -8,7 +8,7 @@ const Shop = () => {
   return (
     <div className="">
       <Header />
-      <div className="max-w-6xl mx-auto px-3 py-6 sm:px-5 lg:px-6">
+      {/* <div className="max-w-6xl mx-auto px-3 py-6 sm:px-5 lg:px-6">
       <div className="flex flex-col md:flex-row justify-between items-center mb-6 mx-2">
        <div className="flex flex-col">
         <h2 className="text-3xl font-semibold mb-4">Product Overview</h2>
@@ -48,8 +48,8 @@ const Shop = () => {
           >
             Load More
           </button>
-        </div>
-        {/* <div className="max-w-7xl mx-auto px-3 py-3 sm:px-5 lg:px-6">
+        </div> */}
+        <div className="max-w-7xl mx-auto px-3 py-3 sm:px-5 lg:px-6">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {Array.from({ length: 12 }).map((_, i) => <CardSkeleton key={i} />)}
             </div>
