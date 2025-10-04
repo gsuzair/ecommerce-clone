@@ -3,15 +3,18 @@ import Button from "../../components/button/button";
 import TextField from "../../components/textField/textField";
 import { useNavigate } from "react-router-dom";
 
-import "./signUp.css";
+import "./signIn.css";
 
-const Signup = () => {
+/*function SignIn() {
+  const navigate = useNavigate();
+}*/
+const SignIn = () => {
   const [data, setData] = useState({
-    firstName: "",
-    lastName: "",
     email: "",
     password: "",
   });
+
+  const navigate = useNavigate();
 
   const handleChange = () => {
     setData();
@@ -21,16 +24,13 @@ const Signup = () => {
     console.log("button pressed");
   };
 
-  //tahir's addition to the code
-  const navigate = useNavigate();
-
   return (
-    <div className="signup_container">
-      <div className="signup_form_container">
+    <div className="signin_container">
+      <div className="signin_form_container">
         <div className="left">
-          <h1>Welcome Back</h1>
-          <Button type="submit" className="white_btn" onClick={() => navigate("/")}>
-            Sign In
+          <h1>Create Account</h1>
+          <Button type="submit" className="white_btn" onClick={() => navigate("/Signup")}>
+            Sign Up
           </Button>
 
           {/* <button type="button" className='white_btn'>
@@ -39,36 +39,13 @@ const Signup = () => {
         </div>
         <div className="right">
           <form className="form_container" onSubmit={handleSubmit}>
-            <h1 className="headerBlack">Create Account</h1>
-            <TextField
-              type="text"
-              placeholder="First Name"
-              name="firstName"
-              value={data.firstName}
-              onChange={handleChange}
-              className="input"
-            />
-            {/* <input
-							type="text"
-							placeholder="First Name"
-							name="firstName"
-							onChange={handleChange}
-							value={data.firstName}
-							required
-							className='input'
-						/> */}
-			<TextField
-              type="text"
-              placeholder="Last Name"
-              name="lastName"
-              value={data.lastName}
-              onChange={handleChange}
-              className="input"
-            />
+            <h1 className="headerBlack">Welcome Back</h1>
+            
+			
         
             <TextField
               type="email"
-              placeholder="Email"
+              placeholder="Enter your Email"
               name="email"
               onChange={handleChange}
               value={data.email}
@@ -76,14 +53,14 @@ const Signup = () => {
             />
             <TextField
               type="password"
-              placeholder="Password"
+              placeholder="Enter your Password"
               name="password"
               onChange={handleChange}
               value={data.password}
               className="input"
             />
             <Button type="submit" className="green_btn">
-              Sign Up
+              Sign In
             </Button>
             {/* <button type="submit" className='green_btn'>
 							Sign Up
@@ -95,4 +72,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignIn;
