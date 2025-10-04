@@ -5,8 +5,9 @@ import Contact from './screens/Contact/Contact';
 import Feature from './screens/Features/Feature';
 import HomePage from './screens/Home/HomePage';
 import Shop from './screens/Shop/Shop';
-import Signup from './screens/Signup/signUp'
-import Dashboard from './screens/Admin/Dashboard/Dashboard'
+import Signup from './screens/Signup/signUp';
+import SignIn from './screens/SignIn/SignIn';
+import Dashboard from './screens/Admin/Dashboard/Dashboard';
 import { Routes, Route } from "react-router-dom";
 import Invoice from './screens/Admin/Invoice/Invoice';
 import Billing from './screens/Admin/Billing/Billing';
@@ -19,7 +20,8 @@ function App() {
 
   return (
     <Routes>
-		<Route path="/" element={<Signup />}/>
+    <Route path="/" element={<SignIn />}/>
+    <Route path="/Signup" element={<Signup />}/>
 		<Route path="/home" element={<HomePage />}/>
 		<Route path="/shop" element={<Shop />}/>
 		<Route path="/blog" element={<Blog />}/>
