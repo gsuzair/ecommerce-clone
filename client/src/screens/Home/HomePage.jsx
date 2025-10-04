@@ -1,12 +1,15 @@
 import Header from "../../components/Layout/Header";
 import Footer from "../../components/Layout/Footer";
 import CardSkeleton from "../../components/Layout/Product/CardSkeleton";
+import ButtonCustom from '../../components/button/ButtonCustom';
 import { FiFilter, FiSearch } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+
 
 const HomePage = () => {
   const slides = [
@@ -131,12 +134,17 @@ const HomePage = () => {
         </div>
       </div>
       <div className="flex justify-center mt-8 mb-8">
-        <button className="px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">
-          Load More
-        </button>
+        <ButtonCustom
+              type="submit"
+              className="mt-6 mb-6 block mx-auto px-4 py-2 rounded-lg border"
+              onClick={() => console.log('clicked')}
+              disabled
+            >
+              Load More
+            </ButtonCustom>
       </div>
       {/* Blogs Section */}
-      <div className="max-w-6xl mx-auto px-3 py-6 sm:px-5 lg:px-6">
+      <div className="max-w-6xl mx-auto px-3 py-6 sm:px-5 lg:px-6 mb-10 mt-10">
         <h2 className="text-3xl font-semibold mb-6">Latest Blogs</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {blogs.map((blog) => (
