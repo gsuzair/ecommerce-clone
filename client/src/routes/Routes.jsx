@@ -18,6 +18,13 @@ export default function AppRoutes() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/feature" element={<Feature />} />
       <Route path="/about" element={<About />} />
+
+      <Route path="/admin" element={<Dashboard />}/>
+      <Route path="/admin/invoice" element={<Invoice />}/>
+      <Route path="/admin/billing" element={<Billing />}/>
+      <Route path="/admin/order" element={<Order />}/>
+      <Route path="/admin/product" element={<Product />}/>
+      <Route path="/admin/user" element={<User />}/>
     </Routes>
   );
 }
