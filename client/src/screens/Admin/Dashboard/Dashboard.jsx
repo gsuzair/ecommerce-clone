@@ -1,9 +1,10 @@
-const Dashboard = () => {
+import AdminLayout from "../../../components/AdminLayout/AdminLayout";
 
+const Dashboard = () => {
   return (
-    <div className="">
-      This is Dashboard page
-    </div>
+    <AdminLayout>
+      <div>This is Dashboard page</div>
+    </AdminLayout>
   );
 };
 
