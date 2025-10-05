@@ -1,4 +1,5 @@
 import './App.css'
+import AppRoutes from './routes/Routes'
 import About from './screens/About/About';
 import Blog from './screens/Blog/Blog';
 import Contact from './screens/Contact/Contact';
@@ -19,23 +20,7 @@ import User from './screens/Admin/User/User';
 function App() {
 
   return (
-    <Routes>
-    <Route path="/" element={<SignIn />}/>
-    <Route path="/Signup" element={<Signup />}/>
-		<Route path="/home" element={<HomePage />}/>
-		<Route path="/shop" element={<Shop />}/>
-		<Route path="/blog" element={<Blog />}/>
-		<Route path="/contact" element={<Contact />}/>
-		<Route path="/feature" element={<Feature />}/>
-		<Route path="/about" element={<About />}/>
-
-		<Route path="/admin" element={<Dashboard />}/>
-		<Route path="/admin/invoice" element={<Invoice />}/>
-		<Route path="/admin/billing" element={<Billing />}/>
-		<Route path="/admin/order" element={<Order />}/>
-		<Route path="/admin/product" element={<Product />}/>
-		<Route path="/admin/user" element={<User />}/>
-	</Routes>
+    <AppRoutes />
   )
 }
 
