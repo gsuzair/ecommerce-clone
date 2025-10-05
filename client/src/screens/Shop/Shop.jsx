@@ -1,6 +1,6 @@
 import Header from "../../components/Layout/Header";
 import Footer from "../../components/Layout/Footer";
-import CardSkeleton from '../../components/Layout/Product/CardSkeleton';
+import CardSkeleton from '../../components/Product/CardSkeleton';
 import ButtonCustom from '../../components/button/ButtonCustom';
 import { FiFilter, FiSearch } from "react-icons/fi";
 import { Link } from "react-router-dom";
