@@ -1,9 +1,7 @@
 import { useState } from "react";
 import Button from "../../components/button/ButtonCustom";
 import TextField from "../../components/textField/textField";
-import { useNavigate } from "react-router-dom";
-
-import "./signUp.css";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   const [data, setData] = useState({
@@ -13,66 +11,66 @@ const Signup = () => {
     password: "",
   });
 
-  const handleChange = () => {
-    setData();
+  const handleChange = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     console.log("button pressed");
   };
 
-  //tahir's addition to the code
-  const navigate = useNavigate();
-
   return (
-    <div className="signup_container">
-      <div className="signup_form_container">
-        <div className="left">
-          <h1>Welcome Back</h1>
-          <Button type="submit" className="white_btn" onClick={() => navigate("/")}>
-            Sign In
-          </Button>
-
-          {/* <button type="button" className='white_btn'>
-							Sign in
-						</button> */}
+    <div className="flex items-center justify-center min-h-screen bg-gray-50">
+      <div className="flex w-[900px] h-[500px] rounded-2xl shadow-lg overflow-hidden">
+        {/* Left Section */}
+        <div className="flex flex-col items-center justify-center bg-gray-800 w-1/2 text-white p-6">
+          <h1 className="text-3xl font-semibold mb-6 text-center">
+            Welcome Back
+          </h1>
+          <Link to="/signin">
+            <Button
+              type="button"
+              className="bg-white text-gray-900 font-medium rounded-full px-6 py-2 text-sm hover:bg-gray-200 transition"
+            >
+              Sign In
+            </Button>
+          </Link>
         </div>
-        <div className="right">
-          <form className="form_container" onSubmit={handleSubmit}>
-            <h1 className="headerBlack">Create Account</h1>
+
+        {/* Right Section */}
+        <div className="flex flex-col items-center justify-center bg-white w-1/2 p-6">
+          <form
+            className="flex flex-col items-center w-full max-w-md"
+            onSubmit={handleSubmit}
+          >
+            <h1 className="text-4xl font-semibold text-gray-900 mb-8 text-center">
+              Create Account
+            </h1>
+
             <TextField
               type="text"
               placeholder="First Name"
               name="firstName"
-              value={data.firstName}
               onChange={handleChange}
-              className="input"
+              value={data.firstName}
+              className="w-full p-3 mb-4 bg-gray-100 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-700"
             />
-            {/* <input
-							type="text"
-							placeholder="First Name"
-							name="firstName"
-							onChange={handleChange}
-							value={data.firstName}
-							required
-							className='input'
-						/> */}
-			<TextField
+            <TextField
               type="text"
               placeholder="Last Name"
               name="lastName"
-              value={data.lastName}
               onChange={handleChange}
-              className="input"
+              value={data.lastName}
+              className="w-full p-3 mb-4 bg-gray-100 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-700"
             />
-        
             <TextField
               type="email"
               placeholder="Email"
               name="email"
               onChange={handleChange}
               value={data.email}
-              className="input"
+              className="w-full p-3 mb-4 bg-gray-100 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-700"
             />
             <TextField
               type="password"
@@ -80,14 +78,15 @@ const Signup = () => {
               name="password"
               onChange={handleChange}
               value={data.password}
-              className="input"
+              className="w-full p-3 mb-6 bg-gray-100 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-700"
             />
-            <Button type="submit" className="green_btn">
+
+            <Button
+              type="submit"
+              className="bg-gray-800 text-white w-full py-2.5 mt-3 rounded-lg font-medium hover:bg-gray-700 transition"
+            >
               Sign Up
             </Button>
-            {/* <button type="submit" className='green_btn'>
-							Sign Up
-						</button> */}
           </form>
         </div>
       </div>
@@ -96,3 +95,4 @@ const Signup = () => {
 };
 
 export default Signup;
+
