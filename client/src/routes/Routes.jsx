@@ -13,12 +13,14 @@ import Billing from '../screens/Admin/Billing/Billing';
 import Order from '../screens/Admin/Order/Order';
 import Product from '../screens/Admin/Product/Product';
 import User from '../screens/Admin/User/User';
+import SignIn from "../screens/SignIn/signIn";
 
 export default function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<Signup />} />
-      <Route path="/home" element={<HomePage />} />
+      <Route path="/" element={< HomePage/>} />
+      <Route path="/signin" element={<SignIn />} />
+      <Route path="/signup" element={<Signup />} />
       <Route path="/shop" element={<Shop />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/contact" element={<Contact />} />
@@ -34,3 +36,13 @@ export default function AppRoutes() {
     </Routes>
   );
 }
+
+
+
+
+
+
+
+
+
+
