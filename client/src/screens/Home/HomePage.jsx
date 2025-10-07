@@ -2,7 +2,8 @@ import Header from "../../components/Layout/Header";
 import Footer from "../../components/Layout/Footer";
 import CardSkeleton from "../../components/Product/CardSkeleton";
 import ButtonCustom from '../../components/button/ButtonCustom';
-import { FiFilter, FiSearch } from "react-icons/fi";
+import { useState } from "react";
+import { FiFilter, FiSearch, FiX } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -12,6 +13,10 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 
 const HomePage = () => {
+ 
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+
   const slides = [
     { id: 1, title: "Women Collection 2024", image: "/images/slide1.jpg" },
     { id: 2, title: "Men Collection 2024", image: "/images/slide2.jpg" },
@@ -116,13 +121,13 @@ const HomePage = () => {
               <FiFilter className="text-lg" />
               <span>Filter</span>
             </Link>
-            <Link
-              to="/"
-              className="hidden sm:inline-flex rounded-lg border px-3 py-1.5 text-sm"
+            <button
+              onClick={() => setIsSearchOpen(true)}
+              className="inline-flex items-center rounded-lg border px-3 py-1.5 text-sm hover:bg-gray-100 transition"
             >
-              <FiSearch className="text-lg" />
+              <FiSearch className="text-lg mr-1" />
               <span>Search</span>
-            </Link>
+            </button>
           </div>
         </div>
       </div>
@@ -167,6 +172,58 @@ const HomePage = () => {
           ))}
         </div>
       </div>
+            {/* --- Search Modal --- */}
+      {isSearchOpen && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-50">
+          <div className="bg-white w-11/12 max-w-lg rounded-2xl shadow-xl p-6 relative animate-fade-in">
+
+            <button
+              onClick={() => setIsSearchOpen(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-black"
+            >
+              <FiX size={22} />
+            </button>
+
+
+            <h2 className="text-2xl font-semibold mb-4 text-center text-gray-800">
+              Search Products
+            </h2>
+
+            <div className="flex items-center border rounded-full overflow-hidden shadow-sm">
+              <FiSearch className="ml-3 text-gray-500 text-lg" />
+              <input
+                type="text"
+                placeholder="Search for shirts, shoes, bags..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full px-3 py-2 outline-none text-gray-700"
+              />
+            </div>
+
+            <div className="mt-4 flex flex-wrap justify-center gap-3">
+              {["All", "Women", "Men", "Shoes", "Bags", "Accessories"].map(
+                (cat) => (
+                  <button
+                    key={cat}
+                    className="px-4 py-1.5 bg-gray-100 rounded-full text-sm hover:bg-gray-200 transition"
+                  >
+                    {cat}
+                  </button>
+                )
+              )}
+            </div>
+
+            <div className="mt-6 flex justify-center">
+              <button
+                onClick={() => console.log("Searching for:", searchTerm)}
+                className="bg-black text-white px-6 py-2 rounded-full text-sm hover:bg-gray-800 transition"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       <Footer />
     </div>
   );
