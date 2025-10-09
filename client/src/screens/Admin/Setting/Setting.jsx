@@ -3,7 +3,7 @@ import AdminLayout from "../../../components/AdminLayout/AdminLayout";
 const Setting = () => {
   return (
     <AdminLayout>
-      <div>This is Dashboard page</div>
+      <div>This is Setting page</div>
     </AdminLayout>
   );
 };

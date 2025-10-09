@@ -1,9 +1,41 @@
+import { FiBox, FiUsers } from "react-icons/fi";
+import CustomerOrOrder from "../../../components/Admin/Dashboard/CustomerOrOrder";
+import MonthlyTarget from "../../../components/Admin/Dashboard/MonthlyTarget";
+import MonthlySales from "../../../components/Admin/Dashboard/MonthlySales";
+import CustomersDemographic from "../../../components/Admin/Dashboard/CustomersDemographic";
+import RecentOrder from "../../../components/Admin/Dashboard/RecentOrder";
+import Statistics from "../../../components/Admin/Dashboard/Statistics";
 import AdminLayout from "../../../components/AdminLayout/AdminLayout";
 
 const Dashboard = () => {
   return (
     <AdminLayout>
-      <div>This is Dashboard page</div>
+      <div className="grid gap-4 lg:gap-6 grid-cols-1 lg:grid-cols-12 auto-rows-[1fr]">
+        <div className="lg:col-span-3">
+          <CustomerOrOrder title="Customers" value="3,782" delta="11.01%" positive icon={<FiUsers />} />
+        </div>
+        <div className="lg:col-span-3">
+          <CustomerOrOrder title="Products" value="1,245" delta="2.3%" positive icon={<FiBox />} />
+        </div>
+
+        <div className="lg:col-span-6 lg:row-span-2">
+          <MonthlyTarget />
+        </div>
+
+        <div className="lg:col-span-6">
+          <MonthlySales />
+        </div>
+
+        <div className="lg:col-span-12">
+          <Statistics />
+        </div>
+        <div className="lg:col-span-5">
+          <CustomersDemographic />
+        </div>
+        <div className="lg:col-span-7">
+          <RecentOrder />
+        </div>
+      </div>
     </AdminLayout>
   );
 };

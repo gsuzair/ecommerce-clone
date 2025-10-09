@@ -8,6 +8,7 @@ import HomePage from "../screens/Home/HomePage";
 import Shop from "../screens/Shop/Shop";
 import Signup from "../screens/Signup/SignUp";
 import Dashboard from '../screens/Admin/Dashboard/Dashboard';
+import Setting from '../screens/Admin/Setting/Setting';
 import Invoice from '../screens/Admin/Invoice/Invoice';
 import Billing from '../screens/Admin/Billing/Billing';
 import Order from '../screens/Admin/Order/Order';

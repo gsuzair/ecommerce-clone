@@ -9,7 +9,7 @@ const AdminLayout = ({ children }) => {
   return (
     <div className="min-h-screen bg-gray-50">
       <AdminHeader onToggleSidebar={() => setSidebarOpen(v => !v)} />
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="mx-auto px-4">
         <div className="md:grid md:grid-cols-[16rem_1fr] md:gap-6">
           {/* Sidebar */}
           <AdminSidebar open={sidebarOpen} />
