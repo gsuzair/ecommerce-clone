@@ -32,7 +32,8 @@ export default function AppRoutes() {
       <Route path="/admin/billing" element={<Billing />}/>
       <Route path="/admin/order" element={<Order />}/>
       <Route path="/admin/product" element={<Product />}/>
-      <Route path="/admin/user" element={<User />}/>
+      <Route path="/admin/customer" element={<User />}/>
+      <Route path="/admin/setting" element={<Setting />}/>
     </Routes>
   );
 }

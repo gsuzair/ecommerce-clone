@@ -3,7 +3,7 @@ import AdminHeader from "./Header";
 import AdminSidebar from "./Sidebar";
 import AdminFooter from "./Footer";
 
-export default function AdminLayout({ children }) {
+const AdminLayout = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -31,3 +31,5 @@ export default function AdminLayout({ children }) {
     </div>
   );
 }
+
+export default AdminLayout;

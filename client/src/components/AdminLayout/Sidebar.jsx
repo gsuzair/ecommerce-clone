@@ -14,10 +14,10 @@ export default function AdminSidebar({ open }) {
     >
       <nav className="space-y-1">
         <NavLink to="/admin" end className={({isActive}) => `${item} ${isActive ? active : "text-gray-600"}`}>Overview</NavLink>
-        <NavLink to="/admin/products" className={({isActive}) => `${item} ${isActive ? active : "text-gray-600"}`}>Products</NavLink>
-        <NavLink to="/admin/orders" className={({isActive}) => `${item} ${isActive ? active : "text-gray-600"}`}>Orders</NavLink>
-        <NavLink to="/admin/customers" className={({isActive}) => `${item} ${isActive ? active : "text-gray-600"}`}>Customers</NavLink>
-        <NavLink to="/admin/settings" className={({isActive}) => `${item} ${isActive ? active : "text-gray-600"}`}>Settings</NavLink>
+        <NavLink to="/admin/product" className={({isActive}) => `${item} ${isActive ? active : "text-gray-600"}`}>Products</NavLink>
+        <NavLink to="/admin/order" className={({isActive}) => `${item} ${isActive ? active : "text-gray-600"}`}>Orders</NavLink>
+        <NavLink to="/admin/customer" className={({isActive}) => `${item} ${isActive ? active : "text-gray-600"}`}>Customers</NavLink>
+        <NavLink to="/admin/setting" className={({isActive}) => `${item} ${isActive ? active : "text-gray-600"}`}>Settings</NavLink>
       </nav>
     </aside>
   );
