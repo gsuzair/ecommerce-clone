@@ -14,7 +14,7 @@ const CustomerOrOrder = ({
   const badgeNeg = "bg-red-50 text-red-700 ring-red-200";
 
   return (
-    <div className={`rounded-2xl border bg-white shadow-sm p-5 ${className}`}>
+    <div className={`rounded-2xl border border-slate-200 bg-white p-6 shadow-sm ${className}`}>
       <div className="flex items-start justify-between">
         <div className="h-10 w-10 rounded-xl bg-gray-100 grid place-items-center text-gray-700">
           {icon}

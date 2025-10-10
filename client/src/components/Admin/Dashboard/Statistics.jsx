@@ -1,6 +1,6 @@
 const Statistics = () => {
   return (
-    <div className={`rounded-2xl border bg-white shadow-sm p-5`}>
+    <div className={`rounded-2xl border border-slate-200 bg-white p-6 shadow-sm`}>
       <div>This is Statistics component</div>
     </div>
   );
