@@ -2,17 +2,49 @@ import Header from "../../components/Layout/Header";
 import Footer from "../../components/Layout/Footer";
 import TextField from "../../components/textField/textField";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
+import React, { useState } from "react";
 
 const Contact = () => {
 
+  // to store form data
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  // handling input change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  // handling form submit
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent page reload
+    const { name, email, message } = formData;
+
+    // Show alert
+    alert(
+      `📨 Contact Form Submitted!\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`
+    );
+
+    // clear the form after submission
+    setFormData({ name: "", email: "", message: "" });
+  };
+  
+
   return (
-    <div className="">
+    <div className="bg-white text-black">
       <Header />
       
       <div className="min-h-screen flex flex-col">
       {/* ===== Banner ===== */}
-      <div>
-        <image> <img src="src/assets/images/contact_banner.jpg" alt="Contact Banner" className="mx-auto h-80 object-cover rounded-lg shadow-md" />
+      <div className="">
+        <image> <img src="src/assets/images/contact_banner.jpg" alt="Contact Banner" className="w-full mx-auto object-cover shadow-md" />
         </image>
        {/*<h1 className="text-4xl font-bold">Contact Us</h1>*/}
       </div>
@@ -22,21 +54,30 @@ const Contact = () => {
         {/* === Contact Form === */}
         <div>
           <h2 className="text-2xl font-semibold mb-4">Send us a message</h2>
-          <form className="flex flex-col space-y-4">
+          <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
             <TextField
               type="text"
+              name="name"
               placeholder="Your Name"
+              value= {formData.name}
+              onChange={handleChange}
               className="w-full p-3 mb-4 bg-gray-100 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-700"
               required
             />
             <TextField
               type="email"
+              name="email"
+              value= {formData.email}
+              onChange={handleChange}
               placeholder="Your Email"
               className="w-full p-3 mb-4 bg-gray-100 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-700"
               required
             />
             <textarea
               placeholder="Your Message"
+              name="message"
+              value= {formData.message}
+              onChange={handleChange}
               rows="5"
               className="w-full p-3 mb-4 bg-gray-100 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-700"
               required
