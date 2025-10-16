@@ -14,7 +14,7 @@ export default function Header() {
 
         {/* Center: Nav (desktop) */}
         <nav className="hidden md:flex items-center gap-6 text-sm">
-          <Link to="/home" className="hover:text-gray-900 text-gray-600">Home</Link>
+          <Link to="/" className="hover:text-gray-900 text-gray-600">Home</Link>
           <Link to="/shop" className="hover:text-gray-900 text-gray-600">Shop</Link>
           <Link to="/feature" className="hover:text-gray-900 text-gray-600">Features</Link>
           <Link to="/blog" className="hover:text-gray-900 text-gray-600">Blog</Link>
